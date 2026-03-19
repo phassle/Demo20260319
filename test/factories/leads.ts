@@ -25,6 +25,27 @@ export function createOldUncontactedLead(): Lead {
   return lead;
 }
 
+export function createStaleAiAgentLead(overrides: Partial<Lead> = {}): Lead {
+  const lead = createLead({
+    status: 'new',
+    assignedTo: 'ai_agent',
+    contactedAt: undefined!,
+    ...overrides,
+  });
+  lead.createdAt = overrides.createdAt ?? new Date(Date.now() - 20 * 24 * 60 * 60 * 1000); // 20 days ago
+  return lead;
+}
+
+export function createHumanAssignedLead(overrides: Partial<Lead> = {}): Lead {
+  return createLead({
+    status: 'new',
+    assignedTo: 'Erik Johansson',
+    contactedAt: undefined!,
+    createdAt: new Date(Date.now() - 20 * 24 * 60 * 60 * 1000),
+    ...overrides,
+  });
+}
+
 export function createQualifiedLead(): Lead {
   return createLead({
     status: 'qualified',
