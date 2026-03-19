@@ -86,7 +86,28 @@ This project has **6 intentional bugs/gaps** — perfect for practicing with Cla
 
 ## Workshop exercises
 
-### Exercise 1: Bug fix — Missing phone validation
+### Exercise 1: Onboard your AI colleague — Write AGENTS.md
+
+> **Start here!** Without AGENTS.md, the agent guesses your stack, patterns, and conventions. This is the single most important step.
+
+**Copy-paste into Claude Code:**
+
+```
+Analyze this codebase and create an AGENTS.md file:
+1. Keep it under 150 lines
+2. Cover: WHAT (tech stack), WHY (purpose), HOW (commands)
+3. Progressive Disclosure: index pointing to docs/ files
+4. file:line references instead of code snippets
+5. Assume linters handle code style
+6. Always include these two lines:
+   - Be extremely concise. Sacrifice grammar for concision.
+   - At the end of each plan, list unresolved questions.
+
+Extract patterns into docs/architectural_patterns.md
+Finally: ln -s AGENTS.md CLAUDE.md
+```
+
+### Exercise 2: Bug fix — Missing phone validation
 
 **Copy-paste into Claude Code:**
 
@@ -104,7 +125,7 @@ Fix it:
 - Add tests
 ```
 
-### Exercise 2: BDD/TDD — Lead priority escalation
+### Exercise 3: BDD/TDD — Lead priority escalation
 
 **Copy-paste into Claude Code:**
 
@@ -139,7 +160,7 @@ Or use the `/implement` skill:
 /implement lead priority escalation
 ```
 
-### Exercise 3: Plan mode — Extract service layer
+### Exercise 4: Plan mode — Extract service layer
 
 **Press Shift+Tab x2 for plan mode, then paste:**
 
@@ -154,7 +175,7 @@ Keep the controller thin — it should only handle HTTP concerns.
 Ask me questions before starting.
 ```
 
-### Exercise 3b: Plan mode — Soft delete
+### Exercise 4b: Plan mode — Soft delete
 
 **Press Shift+Tab x2 for plan mode, then paste:**
 
@@ -181,25 +202,6 @@ Proceed?
 - Shows how plan mode investigates before acting
 - She reads existing code to match the project's patterns
 - You review the plan and can iterate before she writes a single line
-
-### Exercise 4: Write your own AGENTS.md
-
-**Copy-paste into Claude Code:**
-
-```
-Analyze this codebase and create an AGENTS.md file:
-1. Keep it under 150 lines
-2. Cover: WHAT (tech stack), WHY (purpose), HOW (commands)
-3. Progressive Disclosure: index pointing to docs/ files
-4. file:line references instead of code snippets
-5. Assume linters handle code style
-6. Always include these two lines:
-   - Be extremely concise. Sacrifice grammar for concision.
-   - At the end of each plan, list unresolved questions.
-
-Extract patterns into docs/architectural_patterns.md
-Finally: ln -s AGENTS.md CLAUDE.md
-```
 
 ### Exercise 5: Multi-agent — Parallel worktrees
 
