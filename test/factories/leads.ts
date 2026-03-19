@@ -12,6 +12,13 @@ export function createLead(overrides: Partial<Lead> = {}): Lead {
   lead.dealerId = overrides.dealerId ?? 1;
   lead.assignedTo = overrides.assignedTo ?? undefined!;
   lead.createdAt = overrides.createdAt ?? new Date();
+  // allow explicit test control
+  if (overrides.contactedAt !== undefined) {
+    lead.contactedAt = overrides.contactedAt;
+  }
+  if (overrides.qualifiedAt !== undefined) {
+    lead.qualifiedAt = overrides.qualifiedAt;
+  }
   return lead;
 }
 
